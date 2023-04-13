@@ -1,0 +1,39 @@
+.container {
+    border: 1px solid black;
+    border-radius: 10px;
+    min-width: 130px;
+    padding: 10px;
+}
+
+.imageContainer {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    min-width: 70px;
+    max-width: 100px;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.productContainer {
+    height: 70px;
+}
+
+.productTitle {
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.productDescription {
+    height: 70px;
+}
+
+.productPrice {
+    margin: 20px 0;
+}

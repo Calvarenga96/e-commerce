@@ -1,7 +1,18 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Store from "./pages/Store";
+import Payment from "./pages/Payment";
 
 function App() {
-    return <div className="App"></div>;
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Store />} />
+                <Route path="/payment" element={<Payment />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;

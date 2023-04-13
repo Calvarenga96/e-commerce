@@ -1,27 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 
-import useProducts from "../../hooks/useProducts";
 import Product from "../Product";
+import useProductsInTens from "../../hooks/useProductsInTens";
 
 import styles from "./index.module.css";
+import { ComponentsContext } from "../../context/ComponentsContext";
 
 const ProductList = () => {
-    const { products } = useProducts();
+    const { simulateLoadingData } = useContext(ComponentsContext);
+    const { products } = useProductsInTens();
 
     return (
         <section className={styles.productsLayout}>
             {products.map((product) => (
-                <>
-                    <Product
-                        key={product?.id}
-                        image={product?.image}
-                        name={product?.title}
-                        description={product?.description}
-                        price={product?.price}
-                        rating={product?.rating?.rate}
-                    />
-                </>
+                <Product
+                    key={product?.id}
+                    image={product?.image}
+                    name={product?.title}
+                    description={product?.description}
+                    price={product?.price}
+                    rating={product?.rating?.rate}
+                />
             ))}
+            {simulateLoadingData && "Loading Data..."}
         </section>
     );
 };

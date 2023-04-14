@@ -5,6 +5,14 @@
     gap: 10px;
 }
 
+.loaderContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 @media only screen and (max-width: 1024px) {
     .productsLayout {
         grid-template-columns: repeat(3, 1fr);

@@ -55,6 +55,7 @@ const useProductsInTens = () => {
 
     return {
         products: productsInTens,
+        setProductsInTens,
     };
 };
 

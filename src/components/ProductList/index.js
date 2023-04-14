@@ -7,14 +7,19 @@ import styles from "./index.module.css";
 import { ComponentsContext } from "../../context/ComponentsContext";
 
 const ProductList = () => {
-    const { simulateLoadingData } = useContext(ComponentsContext);
+    const { simulateLoadingData, searchingSomeProduct, productSearched } =
+        useContext(ComponentsContext);
     const { products } = useProductsInTens();
 
     return (
         <section className={styles.productsLayout}>
-            {products.map((product, index) => (
-                <Product key={index} product={product} />
-            ))}
+            {searchingSomeProduct
+                ? productSearched.map((product, index) => (
+                      <Product key={index} product={product} />
+                  ))
+                : products.map((product, index) => (
+                      <Product key={index} product={product} />
+                  ))}
             {simulateLoadingData && "Loading Data..."}
         </section>
     );

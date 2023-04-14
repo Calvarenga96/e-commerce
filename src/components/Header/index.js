@@ -4,12 +4,15 @@ import { FaShoppingCart } from "react-icons/fa";
 import { ComponentsContext } from "../../context/ComponentsContext";
 
 const Header = () => {
-    const { totalItems } = useContext(ComponentsContext);
+    const { totalItems, openModal } = useContext(ComponentsContext);
 
     return (
         <header className={styles.header}>
             <p className={styles.logoTitle}>Christian's e-commerce</p>
-            <div className={styles.cartContainer}>
+            <div
+                className={styles.cartContainer}
+                onClick={() => openModal(true)}
+            >
                 <FaShoppingCart size="2rem" />
                 <p>{totalItems}</p>
             </div>

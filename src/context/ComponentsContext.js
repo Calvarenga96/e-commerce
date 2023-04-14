@@ -5,6 +5,7 @@ export const ComponentsContext = createContext();
 export const ComponentsProvider = ({ children }) => {
     const [simulateLoadingData, setSimulateLoadingData] = useState(false);
     const [productsSelected, setProductsSelected] = useState([]);
+    const [openPaymentModal, setOpenPaymentModal] = useState(false);
 
     const addToCart = (product) => {
         setProductsSelected((prevProductsSelected) => [
@@ -20,12 +21,28 @@ export const ComponentsProvider = ({ children }) => {
         setProductsSelected(() => [...filterProducts]);
     };
 
+    const openModal = (value) => {
+        setOpenPaymentModal(value);
+    };
+
+    const totalCost = () => {
+        let total = 0;
+        productsSelected.forEach((product) => {
+            total = total + product.price;
+        });
+        return total;
+    };
+
     const value = {
         simulateLoadingData,
         setSimulateLoadingData,
         addToCart,
         deleteFromCart,
         totalItems: productsSelected.length,
+        openModal,
+        openPaymentModal,
+        totalCost,
+        productsSelected,
     };
 
     return (

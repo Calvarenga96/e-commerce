@@ -1,0 +1,97 @@
+.modalContainer {
+    position: fixed;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #fff;
+    z-index: 4;
+    width: 50%;
+    height: max-content;
+    left: 50%;
+    top: 50%;
+    float: left;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.modalHeader button {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    transition: 0.3s;
+}
+
+.modalHeader button:hover {
+    cursor: pointer;
+    background-color: gainsboro;
+    transition: 0.3s;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modalHeader h2 {
+    margin: 0;
+    font-family: Roboto;
+    font-weight: 700;
+}
+
+.productCard {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.productsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.image {
+    max-width: 50px;
+}
+
+.productDetails {
+    margin-left: 10px;
+}
+
+.modalContainer p,
+.productDetails p {
+    font-family: Roboto;
+}
+
+.productDetails button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(209, 48, 48);
+    border-radius: 2px;
+}
+
+.productDetails button:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+    .productCard {
+        flex-direction: column;
+    }
+
+    .imageContainer {
+        margin: 0 auto;
+    }
+
+    .productDetails p {
+        margin-bottom: 15px;
+    }
+}

@@ -8,11 +8,14 @@ const useProductsInTens = () => {
     const { setSimulateLoadingData } = useContext(ComponentsContext);
 
     const [productsInTens, setProductsInTens] = useState([]);
+    const [showingAllProducts, setShowingAllProducts] = useState(false);
     const { products } = useProducts();
 
     useEffect(() => {
-        const productsInTen = getProductsInTens(products);
-        setProductsInTens(productsInTen);
+        if (!productsInTens.length) {
+            const productsInTen = getProductsInTens(products);
+            setProductsInTens(productsInTen);
+        }
 
         const handleScroll = () => {
             const scrollTop =
@@ -22,18 +25,18 @@ const useProductsInTens = () => {
                 document.body.scrollHeight;
             const clientHeight = document.documentElement.clientHeight;
 
-            if (scrollTop + clientHeight >= scrollHeight) {
+            if (
+                scrollTop + clientHeight >= scrollHeight &&
+                !showingAllProducts
+            ) {
                 const productsInTen = getProductsInTens(products, true);
 
                 setSimulateLoadingData(true);
 
                 setTimeout(() => {
-                    setProductsInTens((prevProducts) => [
-                        ...prevProducts,
-                        ...productsInTen,
-                    ]);
-
+                    setProductsInTens(productsInTen);
                     setSimulateLoadingData(false);
+                    setShowingAllProducts(true);
                 }, [3000]);
             }
         };
@@ -43,7 +46,12 @@ const useProductsInTens = () => {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, [products, setSimulateLoadingData]);
+    }, [
+        products,
+        setSimulateLoadingData,
+        showingAllProducts,
+        productsInTens.length,
+    ]);
 
     return {
         products: productsInTens,

@@ -12,15 +12,8 @@ const ProductList = () => {
 
     return (
         <section className={styles.productsLayout}>
-            {products.map((product) => (
-                <Product
-                    key={product?.id}
-                    image={product?.image}
-                    name={product?.title}
-                    description={product?.description}
-                    price={product?.price}
-                    rating={product?.rating?.rate}
-                />
+            {products.map((product, index) => (
+                <Product key={index} product={product} />
             ))}
             {simulateLoadingData && "Loading Data..."}
         </section>

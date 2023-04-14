@@ -9,7 +9,7 @@ const PageLayout = ({ children }) => {
     return (
         <div className={styles.mainLayout}>
             <Header />
-            <section className={styles.mainLayout}>{children}</section>
+            <section className={styles.mainLayoutContent}>{children}</section>
             <Footer />
         </div>
     );

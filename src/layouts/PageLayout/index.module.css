@@ -1,3 +1,9 @@
 .mainLayout {
     max-width: 100vw;
 }
+
+.mainLayoutContent {
+    max-width: 100vw;
+    padding: 10px 20px;
+    margin: 20px 0;
+}

@@ -1,0 +1,13 @@
+.inputContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.input {
+    font-family: Roboto;
+    width: 400px;
+    height: 30px;
+    border-radius: 20px;
+    padding: 0 10px;
+}

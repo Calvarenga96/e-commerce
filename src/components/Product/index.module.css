@@ -1,8 +1,7 @@
 .container {
-    border: 1px solid black;
+    border: 1px solid gainsboro;
     border-radius: 10px;
     min-width: 130px;
-    padding: 10px;
     box-shadow: 0 4px #e6e6e6;
     transition: 0.2s;
     position: relative;
@@ -15,10 +14,12 @@
 }
 
 .imageContainer {
+    padding: 10px;
     height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px solid gainsboro;
 }
 
 .image {
@@ -44,20 +45,32 @@
     height: 70px;
 }
 
-.productDescription p {
-    font-size: 0.9rem;
-    font-family: Roboto;
-    font-weight: 500;
-}
-
 .productPrice {
     margin: 20px 0;
 }
 
+.productDescription p,
+.productPrice p,
+.rating p {
+    font-size: 0.9rem;
+    font-family: Roboto;
+    font-weight: 400;
+}
+
 .button {
     margin-top: 5px;
+    color: #fff;
+    background-color: aqua;
+    border: 0;
+    border-radius: 5px;
+    font-family: Roboto;
+    padding: 10px;
 }
 
 .button:hover {
     cursor: pointer;
+}
+
+.informationContainer {
+    padding: 10px;
 }

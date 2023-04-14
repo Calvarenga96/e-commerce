@@ -1,0 +1,14 @@
+.footerContainer {
+    background-color: aqua;
+    height: 30px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContainer p {
+    font-family: Roboto;
+    color: #fff;
+}

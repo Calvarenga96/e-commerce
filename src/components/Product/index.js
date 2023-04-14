@@ -15,24 +15,26 @@ const Product = ({ product }) => {
             <div className={styles.imageContainer}>
                 <img src={image} alt={title} className={styles.image} />
             </div>
-            <div className={styles.productContainer}>
-                <p className={styles.productTitle}>{title}</p>
+            <div className={styles.informationContainer}>
+                <div className={styles.productContainer}>
+                    <p className={styles.productTitle}>{title}</p>
+                </div>
+                <div className={styles.productDescription}>
+                    <p>{productDescription}</p>
+                </div>
+                <div className={styles.productPrice}>
+                    <p>Price: {price} USD</p>
+                </div>
+                <div className={styles.rating}>
+                    <p>Rating: {rating?.rate}</p>
+                </div>
+                <button
+                    className={styles.button}
+                    onClick={() => addToCart(product)}
+                >
+                    Add To Cart
+                </button>
             </div>
-            <div className={styles.productDescription}>
-                <p>{productDescription}</p>
-            </div>
-            <div className={styles.productPrice}>
-                <p>Price: {price} USD</p>
-            </div>
-            <div className={styles.rating}>
-                <p>Rating: {rating?.rate}</p>
-            </div>
-            <button
-                className={styles.button}
-                onClick={() => addToCart(product)}
-            >
-                Add To Cart
-            </button>
         </div>
     );
 };
